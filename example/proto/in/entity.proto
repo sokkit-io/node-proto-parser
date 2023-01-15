@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package com.entity;
+
+message Entity {
+  int32 id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message GetEntityRequest {
+  int32 id = 1;
+}
+
+message GetEntityByNameRequest {
+  string author = 1;
+}
+
+service EntityService {
+  rpc GetEntity (GetEntityRequest) returns (Entity) {}
+  rpc GetEntityByName (GetEntityByNameRequest) returns (stream Entity) {}
+  rpc GetEntities (stream GetEntityRequest) returns (stream Entity) {}
+}
+
+message EntityGroup {
+  string name = 1;
+  map<int32, string> Entities = 2;
+}
+
+enum EnumSample {
+  option allow_alias = true;
+  UNKNOWN = 0;
+  STARTED = 1;
+  RUNNING = 1;
+}
