@@ -1,6 +1,6 @@
 # parse-proto example usage
 
-Be sure to check out the [readme](./README.md) first.
+Be sure to check out the [readme](../README.md) first.
 
 ## Instructions
 
@@ -15,7 +15,7 @@ $ npm install
 Now, check out the [proto/in](./proto/in) directory contents. You'll see an `entity.proto` file with proto messages and a service.
 This is the file we'll be parsing.
 
-Next, we'll make one small change to [parse-proto.ts](./src/parse-proto.ts#L10) on **line 10** to see how it works with our sample `.proto` file:
+Next, we'll make one small change to [parse-proto.ts](../parse-proto.ts#L10) on **line 10** to see how it works with our sample `.proto` file:
 ```diff
 - const ENV_FILE = '.env';
 + const ENV_FILE = '.env.example';
